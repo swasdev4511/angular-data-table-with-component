@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <input
+    type="text"
+    label="Search"
+    for="search"
+    placeholder="Type to search ..."
+    formControlName="searchStr"
+    (blur)="onBlur($event)"
+    (change)="onChange($event)"
+  />
+  <div *ngIf="searchStr?.touched && searchStr?.errors?.required">
+    <span class="danger">Please enter the value</span>
+  </div>
+</form>
